@@ -8,7 +8,7 @@ RESULT=0
 
 if [ "$1" = start ]; then
 
-    PATH=/usr/bin:/usr/sbin:/bin:/sbin
+    PATH=/usr/bin
     
     if [ ! -z "$LATE_FILESYSTEMS" ]; then
         for FS in $LATE_FILESYSTEMS; do

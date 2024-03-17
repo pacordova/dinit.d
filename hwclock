@@ -2,10 +2,10 @@
 
 type = scripted
 logfile = /run/hwclock.log 
-command = /sbin/hwclock --hctosys
+command = /usr/bin/hwclock --hctosys
 
 # Optional, not necessary, and not recommended:
-#stop-command = /sbin/hwclock --systohc
+#stop-command = /usr/bin/hwclock --systohc
 
 restart = false
 

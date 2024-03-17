@@ -1,5 +1,5 @@
 type = process
-command = /sbin/agetty tty1 linux-c
+command = /usr/bin/agetty tty1 linux-c
 restart = true
 depends-on = loginready
 termsignal = HUP

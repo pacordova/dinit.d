@@ -1,7 +1,7 @@
 # Check auxillary (non-root) filesystems.
 
 type = scripted
-command = /sbin/fsck -A -R -C -a
+command = /usr/bin/fsck -A -R -C -a
 restart = false
 options = starts-on-console
 

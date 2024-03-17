@@ -4,7 +4,7 @@
 
 type = bgprocess
 smooth-recovery = true
-command = /usr/sbin/syslogd
+command = /usr/bin/syslogd
 pid-file = /var/run/syslogd.pid
 options = starts-log
 
