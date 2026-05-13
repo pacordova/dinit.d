@@ -3,9 +3,9 @@
 # Unfortunately it does not support readiness notification, so we use a "bgprocess" service.
 
 type = bgprocess
-command = /usr/bin/syslogd
+command = /bin/syslogd
 smooth-recovery = true
-pid-file = /var/run/syslogd.pid
+pid-file = /run/syslogd.pid
 
 options: starts-log
 depends-on: local.target

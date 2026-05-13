@@ -1,5 +1,5 @@
 type = process
-command = /bin/wpa_supplicant -su
+command = /bin/wpa_supplicant -Dnl80211 -su
 smooth-recovery = true
 
 waits-for: messagebus

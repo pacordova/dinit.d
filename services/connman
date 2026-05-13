@@ -4,7 +4,7 @@
 # May want to consider dbus-launch for readiness notification.
 
 type = process
-command = /bin/connmand -c /etc/connman.conf -n
+command = /bin/connmand -c /etc/connman.conf -n --noplugin=vpn
 smooth-recovery = true
 
 depends-on: messagebus

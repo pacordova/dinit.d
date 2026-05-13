@@ -1,6 +1,6 @@
 # install to libdir by default
 sysconfdir = /etc
-libdir = /usr/lib64
+libdir = /lib64
 
 RSYNC  = rsync -cd --ignore-non-existing
 RSYNC += --backup --suffix=.orig
