@@ -1,8 +1,5 @@
 sysconfdir = /etc
 
-RSYNC  = rsync -cd --ignore-non-existing
-RSYNC += --backup --suffix=.orig
-
 install:
 	mkdir -p $(sysconfdir)/dinit.d/boot.d
 	mkdir -p $(sysconfdir)/dinit.d 
@@ -15,11 +12,11 @@ uninstall:
 	rm -f  $(sysconfdir)/rc.local
 	rm -fr $(sysconfdir)/dinit.d
 
-copy:
-	$(RSYNC) $(sysconfdir)/dinit.d/ meta/
-	$(RSYNC) $(sysconfdir)/dinit.d/ targets/
-	$(RSYNC) $(sysconfdir)/dinit.d/ services/
-	$(RSYNC) $(sysconfdir)/rc.local etc/
+snarf:
+	find $(sysconfdir)/dinit.d -type f -exec cp -f {} ./services \;
+	cp -f $(sysconfdir)/rc.local ./etc
+	mv -f ./services/agetty ./services/modprobe ./services/mount ./meta
+	mv -f ./services/*.target ./targets
 
 clean:
 	find . -name \*~ -delete

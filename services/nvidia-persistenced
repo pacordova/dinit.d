@@ -1,0 +1,7 @@
+type = bgprocess
+command = /bin/nvidia-persistenced --user root --persistence-mode
+pid-file = /run/nvidia-persistenced/nvidia-persistenced.pid
+restart = false
+
+waits-for: modprobe@nvidia
+waits-for: login.target
