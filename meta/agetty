@@ -2,7 +2,7 @@
 # The argument is simply the number of the tty you wish to create.
 
 type = process
-command = /bin/agetty tty$1 linux-c
+command = /bin/agetty tty$1 linux
 restart = true
 term-signal = HUP
 smooth-recovery = true

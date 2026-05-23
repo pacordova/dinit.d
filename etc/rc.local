@@ -8,7 +8,7 @@ set -e
 if [ "$1" != "stop" ]; then
   
   # Set the time.
-  hwclock --hctosys
+  /bin/hwclock --hctosys
   
   # Cleanup (delete /tmp)
   rm -fr /tmp/* /tmp/.[!.]* /tmp/..?*
@@ -42,8 +42,8 @@ if [ "$1" != "stop" ]; then
 
   # Restore the previous ALSA configuration `/var/lib/alsa/asound.state`
   # Use -U to avoid error messages about UCM if you don't have it.
-  alsactl -U restore
-
+  /bin/alsactl --no-ucm restore
+  
 else
 
   # The system is being shut down
