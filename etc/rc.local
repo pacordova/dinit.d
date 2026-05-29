@@ -8,7 +8,7 @@ set -e
 if [ "$1" != "stop" ]; then
   
   # Set the time.
-  /bin/hwclock --hctosys
+  #/bin/hwclock --hctosys
   
   # Cleanup (delete /tmp)
   rm -fr /tmp/* /tmp/.[!.]* /tmp/..?*

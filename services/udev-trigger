@@ -1,0 +1,5 @@
+# udev-trigger
+type = scripted
+command = /bin/udevadm trigger --action=add
+restart = false
+depends-on: udevd

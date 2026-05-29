@@ -7,7 +7,5 @@ log-type = buffer
 restart = false
 
 options: starts-on-console start-interruptible skippable unmask-intr
-depends-on: eudev
-waits-for: eudev-settle
 before: mount@/
 before: mount@-a

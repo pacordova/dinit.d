@@ -8,6 +8,6 @@ log-type = buffer
 restart = false
 
 options: starts-rwfs
-waits-for: eudev-settle
+depends-on: udev-settle
 depends-on: mount@/
 depends-on: mount@-a

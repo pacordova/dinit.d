@@ -1,8 +1,0 @@
-# Trigger udev events for already-present devices.
-
-type = scripted
-command = /bin/eudevadm trigger -vc add
-log-type = buffer
-restart = false
-
-depends-on: eudev

@@ -1,0 +1,7 @@
+# udevd
+type = process
+command = /bin/udevd --ready-notify=4
+stop-command = /bin/udevadm control --exit
+smooth-recovery = true
+ready-notification = pipefd:4
+waits-for: early.target
