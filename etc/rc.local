@@ -29,8 +29,8 @@ if [ "$1" != "stop" ]; then
   done
 
   # Configure the random number generator.
-  if [ -e /var/state/random-seed ]; then
-    cat /var/state/random-seed > /dev/urandom;
+  if [ -e /etc/random.seed ]; then
+    cat /etc/random.seed > /dev/urandom;
   fi
   
   # Set the hostname from /etc/hostname.
@@ -41,16 +41,13 @@ if [ "$1" != "stop" ]; then
   #cat /etc/hostname > /proc/sys/kernel/hostname
 
   # Restore the previous ALSA configuration `/var/lib/alsa/asound.state`
-  # Use -U to avoid error messages about UCM if you don't have it.
-  /bin/alsactl --no-ucm restore
+  /bin/alsactl -U restore
   
 else
 
-  # The system is being shut down
-  
   printf "Saving random number seed...\n"
   POOLSIZE="$(cat /proc/sys/kernel/random/poolsize)"
-  dd if=/dev/urandom of=/var/state/random-seed bs="$POOLSIZE" count=1 2> /dev/null
+  dd if=/dev/urandom of=/etc/random.seed bs="$POOLSIZE" count=1 2> /dev/null
 
   printf "Deleting logs...\n"
   rm -f /var/log/{syslog,messages,kern.log,auth.log}
