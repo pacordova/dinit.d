@@ -18,7 +18,7 @@ if [ "$1" != "stop" ]; then
   
   # Empty utmp, create needed directories.
   : > /run/utmp
-  mkdir -m 0755 /run/{dbus,lock,user}
+  mkdir -m 0755 /run/{dbus,lock,log,user}
 
   # Create user runtime directories.
   # You could create these as a user, see xinit(1).
